@@ -1,7 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Eye, ShieldCheck, Cpu, HeartPulse, Activity, Zap, Compass, Flame } from 'lucide-react';
-import Logo from './Logo';
+import Logo from '<img
+  src={Logo}
+  alt="International Pyramid Vaastu Professionals' Association"
+  className="w-24 h-24 mx-auto mb-6"
+/>;
 
 export default function About() {
   const foundationPrinciples = [
