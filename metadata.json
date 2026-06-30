@@ -1,0 +1,8 @@
+{
+  "name": "IPVPA - International Pyramid Vaastu Professionals' Association",
+  "description": "Official portal for the International Pyramid Vaastu Professionals' Association (IPVPA). Promoting professional excellence in architecture, engineering, and scientific Pyramid Vaastu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
