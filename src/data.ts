@@ -275,6 +275,20 @@ export const PRODUCTS: Product[] = [
     price: 499,
     image: 'instrument-svg-6',
     category: 'Personal Wellness'
+  },
+  {
+    id: 'multicone-booster-max',
+    name: 'Multicone Booster Max',
+    description: 'Ultra-power multi-layered energy grid combining high-potency pyramids with a gold-plated magnetic focal core.',
+    benefits: [
+      'Amplifies positive Vastu bio-magnetic energy by up to 25x',
+      'Neutralizes severe geopathic stress and architectural defects virtually',
+      'Perfect for large residential properties, main halls, and high-level corporate offices',
+      'Optimizes spatial coordinates to attract abundance, focus, and clarity'
+    ],
+    price: 349,
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDXC6qamYzGVK1amjHPcRXTM1xgPdyFs2mSa0LQ2ADTw&s=10',
+    category: 'Energy Instruments'
   }
 ];
 
@@ -289,7 +303,7 @@ export const TEAM: TeamMember[] = [
       'Founder and Chairman of International Pyramid Vaastu Professionals\' Association',
       'Over 25 years of pioneering work in energy-balancing spatial architecture'
     ],
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=500&q=80'
+    image: 'https://media.licdn.com/dms/image/v2/D5603AQEP5Q6QnXg83w/profile-displayphoto-scale_400_400/B56Zsi8OrAJwAg-/0/1765817774342?e=2147483647&v=beta&t=uXMiLEeX04ocjmB0QFnI95rXvUFdrvi0mpbwqg0M_7k'
   },
   {
     id: 'nimal-perera',

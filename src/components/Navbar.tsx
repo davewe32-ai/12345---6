@@ -132,8 +132,8 @@ export default function Navbar({
                 onClick={() => { setCurrentTab(item.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className={`px-4 py-2 rounded-lg font-sans text-sm font-medium transition-all duration-300 relative ${
                   currentTab === item.id
-                    ? 'text-brand-gold-600 dark:text-brand-gold-400 bg-brand-gold-500/10'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-brand-gold-600 dark:hover:text-brand-gold-400 hover:bg-black/5 dark:hover:bg-white/5'
+                    ? 'text-brand-gold-500 dark:text-brand-gold-400 bg-brand-gold-500/10 font-bold'
+                    : 'text-brand-gold-500/80 dark:text-brand-gold-400/80 hover:text-brand-gold-600 dark:hover:text-brand-gold-300 hover:bg-black/5 dark:hover:bg-white/5'
                 }`}
               >
                 {item.label}
@@ -312,8 +312,8 @@ export default function Navbar({
               }}
               className={`w-full text-left px-4 py-3 rounded-xl font-sans text-sm font-semibold transition-all ${
                 currentTab === item.id
-                  ? 'text-brand-gold-500 bg-brand-blue-900/40 dark:bg-white/5 border-l-4 border-brand-gold-500'
-                  : 'text-gray-800 dark:text-gray-200 hover:bg-black/5 dark:hover:bg-white/5'
+                  ? 'text-brand-gold-500 bg-brand-blue-900/40 dark:bg-white/5 border-l-4 border-brand-gold-500 font-bold'
+                  : 'text-brand-gold-500/80 dark:text-brand-gold-400/80 hover:bg-black/5 dark:hover:bg-white/5'
               }`}
             >
               {item.label}

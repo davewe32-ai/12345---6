@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Eye, ShieldCheck, Cpu, HeartPulse, Activity, Zap, Compass, Flame } from 'lucide-react';
-import Logo from '<img
-  src={Logo}
-  alt="International Pyramid Vaastu Professionals' Association"
-  className="w-24 h-24 mx-auto mb-6"
-/>;
+import Logo from './Logo';
 
 export default function About() {
   const foundationPrinciples = [
@@ -38,7 +34,7 @@ export default function About() {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden border border-brand-gold-500/20 shadow-2xl z-10">
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+                src="https://media.licdn.com/dms/image/v2/D5603AQEP5Q6QnXg83w/profile-displayphoto-scale_400_400/B56Zsi8OrAJwAg-/0/1765817774342?e=2147483647&v=beta&t=uXMiLEeX04ocjmB0QFnI95rXvUFdrvi0mpbwqg0M_7k"
                 alt="Meril Peiris, Chairman of IPVPA"
                 className="w-full h-[550px] object-cover"
                 referrerPolicy="no-referrer"
