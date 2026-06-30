@@ -29,14 +29,14 @@ export default function Team() {
               className="rounded-3xl bg-white dark:bg-brand-blue-900 border border-gray-100 dark:border-brand-blue-800 shadow-xl overflow-hidden grid md:grid-cols-12 gap-0 group hover:border-brand-gold-500/30 transition-all duration-300"
             >
               {/* Chairman Photo */}
-              <div className="md:col-span-5 h-[380px] md:h-full relative overflow-hidden bg-gray-100 dark:bg-brand-blue-850">
+              <div className="md:col-span-5 h-[380px] md:h-full min-h-[380px] relative overflow-hidden bg-brand-blue-950 flex items-center justify-center p-6">
                 <img
                   src={chairman.image}
                   alt={chairman.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500"
+                  className="w-full h-full object-contain rounded-2xl group-hover:scale-102 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-950/40 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Chairman stamp */}
                 <div className="absolute top-6 left-6 px-3.5 py-1.5 rounded-xl glass border border-white/20">

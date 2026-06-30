@@ -175,7 +175,7 @@ export const PRODUCTS: Product[] = [
       'Ideal for living rooms, master bedrooms, and home offices'
     ],
     price: 249,
-    image: 'instrument-svg-0',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQWksCN4nKDMxaMbX_RODZMP-7uzNrXPSUhOuBOSvisO5i2e7YekT9_qk&s=10',
     category: 'Energy Instruments'
   },
   {
@@ -189,7 +189,7 @@ export const PRODUCTS: Product[] = [
       'Installed at ground level during early construction or in gardens'
     ],
     price: 389,
-    image: 'instrument-svg-1',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScBnP1xy6tDUP4qP1q8e8hIV3_6EL99ZkLLoWcssJNB15c2quQiqzRzCU&s=10',
     category: 'Boundary Tools'
   },
   {
@@ -203,7 +203,7 @@ export const PRODUCTS: Product[] = [
       'Highly compact and portable, suitable for travel'
     ],
     price: 119,
-    image: 'instrument-svg-5',
+    image: 'https://m.media-amazon.com/images/I/31Zg-btNH9L._AC_UF894,1000_QL80_.jpg',
     category: 'Personal Wellness'
   },
   {

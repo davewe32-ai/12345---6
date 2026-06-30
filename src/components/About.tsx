@@ -32,19 +32,19 @@ export default function About() {
         {/* Vision & Leadership Module */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-brand-gold-500/20 shadow-2xl z-10">
+            <div className="relative rounded-3xl overflow-hidden border border-brand-gold-500/20 shadow-2xl z-10 bg-brand-blue-950/80 aspect-square flex items-center justify-center">
               <img
                 src="https://media.licdn.com/dms/image/v2/D5603AQEP5Q6QnXg83w/profile-displayphoto-scale_400_400/B56Zsi8OrAJwAg-/0/1765817774342?e=2147483647&v=beta&t=uXMiLEeX04ocjmB0QFnI95rXvUFdrvi0mpbwqg0M_7k"
                 alt="Meril Peiris, Chairman of IPVPA"
-                className="w-full h-[550px] object-cover"
+                className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-900/90 via-brand-blue-800/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-950/80 via-transparent to-transparent pointer-events-none" />
               
               {/* Image Floating Captions */}
-              <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl glass border border-white/10">
-                <p className="font-display font-extrabold text-lg text-white mb-0.5">Meril Peiris</p>
-                <p className="font-sans text-xs text-brand-gold-400 uppercase tracking-widest font-semibold">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass border border-white/10">
+                <p className="font-display font-extrabold text-base text-white mb-0.5">Meril Peiris</p>
+                <p className="font-sans text-[10px] text-brand-gold-400 uppercase tracking-widest font-semibold">
                   Chairman & Architectural Designer
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function About() {
           <div className="lg:col-span-5 order-1 lg:order-2 relative">
             <div className="relative rounded-3xl overflow-hidden border border-brand-gold-500/20 shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80"
+                src="https://glorioushomeslk.com/wp-content/uploads/2025/09/House-in-Ja-Ela-13.webp"
                 alt="Sacred Geometry Research and Architecture"
                 className="w-full h-[520px] object-cover"
                 referrerPolicy="no-referrer"

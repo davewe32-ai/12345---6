@@ -351,12 +351,14 @@ export default function Cart({
                         <InstrumentImage id={item.product.image} />
                       </div>
                     ) : (
-                      <img
-                        src={item.product.image}
-                        alt={item.product.name}
-                        className="w-full h-full object-cover"
-                        referrerPolicy="no-referrer"
-                      />
+                      <div className="w-full h-full p-1.5 flex items-center justify-center bg-white dark:bg-brand-blue-900">
+                        <img
+                          src={item.product.image}
+                          alt={item.product.name}
+                          className="max-w-full max-h-full object-contain"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
                     )}
                   </div>
 
