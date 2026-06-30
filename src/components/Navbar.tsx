@@ -151,7 +151,7 @@ export default function Navbar({
             <div className="relative" ref={searchRef}>
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 transition-all duration-200"
+                className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-brand-gold-500 dark:text-brand-gold-400 transition-all duration-200"
                 aria-label="Search site"
               >
                 <Search size={20} />
@@ -267,16 +267,16 @@ export default function Navbar({
             {/* Dark Mode Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 transition-all duration-200"
+              className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-brand-gold-500 dark:text-brand-gold-400 transition-all duration-200"
               aria-label="Toggle visual theme"
             >
-              {darkMode ? <Sun size={20} className="text-brand-gold-400" /> : <Moon size={20} />}
+              {darkMode ? <Sun size={20} className="text-brand-gold-400" /> : <Moon size={20} className="text-brand-gold-500" />}
             </button>
 
             {/* Shopping Cart Trigger */}
             <button
               onClick={onOpenCart}
-              className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 relative transition-all duration-200"
+              className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-brand-gold-500 dark:text-brand-gold-400 relative transition-all duration-200"
               aria-label="View shopping cart"
             >
               <ShoppingCart size={20} />
@@ -290,7 +290,7 @@ export default function Navbar({
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 lg:hidden transition-all duration-200"
+              className="p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-brand-gold-500 dark:text-brand-gold-400 lg:hidden transition-all duration-200"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}

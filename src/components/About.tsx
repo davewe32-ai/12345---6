@@ -32,17 +32,48 @@ export default function About() {
         {/* Vision & Leadership Module */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-brand-gold-500/20 shadow-2xl z-10 bg-brand-blue-950/80 aspect-square flex flex-col items-center justify-center text-brand-gold-400 p-8">
-              <div className="w-36 h-36 rounded-full bg-brand-blue-900/60 border border-brand-gold-500/30 flex items-center justify-center shadow-2xl mb-4">
-                <User size={80} className="stroke-[1.5]" />
+            <div className="grid grid-cols-2 gap-4">
+              {/* Leader 1 */}
+              <div className="relative rounded-2xl border border-brand-gold-500/20 shadow-xl bg-brand-blue-950/80 p-4 flex flex-col items-center justify-center text-center aspect-square group hover:border-brand-gold-500/40 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-brand-blue-900/60 border border-brand-gold-500/30 flex items-center justify-center shadow-lg mb-2 text-brand-gold-400 group-hover:scale-105 transition-transform">
+                  <User size={32} className="stroke-[1.5]" />
+                </div>
+                <p className="font-display font-extrabold text-xs sm:text-sm text-brand-gold-400 mb-0.5">Meril Peiris</p>
+                <p className="font-sans text-[8px] sm:text-[9px] text-brand-gold-400/80 uppercase tracking-wider font-semibold leading-tight">
+                  Chairman & Architect
+                </p>
               </div>
-              <span className="font-sans text-xs text-gray-400 uppercase tracking-widest">IPVPA Leadership</span>
-              
-              {/* Image Floating Captions */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass border border-white/10 text-center">
-                <p className="font-display font-extrabold text-base text-white mb-0.5">Meril Peiris</p>
-                <p className="font-sans text-[10px] text-brand-gold-400 uppercase tracking-widest font-semibold">
-                  Chairman & Architectural Designer
+
+              {/* Leader 2 */}
+              <div className="relative rounded-2xl border border-brand-gold-500/20 shadow-xl bg-brand-blue-950/80 p-4 flex flex-col items-center justify-center text-center aspect-square group hover:border-brand-gold-500/40 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-brand-blue-900/60 border border-brand-gold-500/30 flex items-center justify-center shadow-lg mb-2 text-brand-gold-400 group-hover:scale-105 transition-transform">
+                  <User size={32} className="stroke-[1.5]" />
+                </div>
+                <p className="font-display font-extrabold text-xs sm:text-sm text-brand-gold-400 mb-0.5">Prof. K. Jayasekara</p>
+                <p className="font-sans text-[8px] sm:text-[9px] text-brand-gold-400/80 uppercase tracking-wider font-semibold leading-tight">
+                  Senior Research Director
+                </p>
+              </div>
+
+              {/* Leader 3 */}
+              <div className="relative rounded-2xl border border-brand-gold-500/20 shadow-xl bg-brand-blue-950/80 p-4 flex flex-col items-center justify-center text-center aspect-square group group hover:border-brand-gold-500/40 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-brand-blue-900/60 border border-brand-gold-500/30 flex items-center justify-center shadow-lg mb-2 text-brand-gold-400 group-hover:scale-105 transition-transform">
+                  <User size={32} className="stroke-[1.5]" />
+                </div>
+                <p className="font-display font-extrabold text-xs sm:text-sm text-brand-gold-400 mb-0.5">Archt. Sophia Chen</p>
+                <p className="font-sans text-[8px] sm:text-[9px] text-brand-gold-400/80 uppercase tracking-wider font-semibold leading-tight">
+                  Geometrical Designer
+                </p>
+              </div>
+
+              {/* Leader 4 */}
+              <div className="relative rounded-2xl border border-brand-gold-500/20 shadow-xl bg-brand-blue-950/80 p-4 flex flex-col items-center justify-center text-center aspect-square group hover:border-brand-gold-500/40 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-brand-blue-900/60 border border-brand-gold-500/30 flex items-center justify-center shadow-lg mb-2 text-brand-gold-400 group-hover:scale-105 transition-transform">
+                  <User size={32} className="stroke-[1.5]" />
+                </div>
+                <p className="font-display font-extrabold text-xs sm:text-sm text-brand-gold-400 mb-0.5">Eng. Marcus Thorne</p>
+                <p className="font-sans text-[8px] sm:text-[9px] text-brand-gold-400/80 uppercase tracking-wider font-semibold leading-tight">
+                  Bio-Resonance Expert
                 </p>
               </div>
             </div>
