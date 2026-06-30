@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUp, Star, ShieldCheck, X, Sparkles, BookOpen, Quote } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 // Static Data and Types
 import { SERVICES, PRODUCTS, BLOGS, TESTIMONIALS } from './data';
@@ -177,147 +178,157 @@ export default function App() {
 
       {/* Main Page Render Pipeline */}
       <main className="flex-grow">
-        {currentTab === 'home' && (
-          <div className="animate-fade-in space-y-0">
-            {/* Hero module */}
-            <Hero 
-              onNavigate={(tab) => { setCurrentTab(tab); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              onScrollToAbout={handleScrollToAbout}
-            />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentTab}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.35, ease: [0.215, 0.61, 0.355, 1] }}
+          >
+            {currentTab === 'home' && (
+              <div className="space-y-0">
+                {/* Hero module */}
+                <Hero 
+                  onNavigate={(tab) => { setCurrentTab(tab); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onScrollToAbout={handleScrollToAbout}
+                />
 
-            {/* Vision & Foundation */}
-            <About />
+                {/* Vision & Foundation */}
+                <About />
 
-            {/* Services highlights previews */}
-            <section className="py-24 bg-white dark:bg-brand-blue-900/60 transition-colors">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                  <h2 className="font-display font-bold text-xs sm:text-sm uppercase tracking-widest text-brand-gold-600 dark:text-brand-gold-400 mb-3">Featured Science</h2>
-                  <h3 className="font-display font-bold text-3xl text-brand-blue-900 dark:text-white leading-tight">Elite Specialized Audits</h3>
-                  <div className="w-16 h-1 bg-brand-gold-500 mx-auto mt-4 rounded-full" />
-                </div>
-
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {SERVICES.slice(0, 4).map((s) => (
-                    <div 
-                      key={s.id} 
-                      onClick={() => { setSelectedService(s); setCurrentTab('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                      className="p-6 rounded-2xl bg-gray-50 dark:bg-brand-blue-800/20 border border-gray-100 dark:border-brand-blue-800/40 hover:border-brand-gold-500 transition-all duration-300 cursor-pointer"
-                    >
-                      <span className="font-mono text-brand-gold-500 font-bold text-sm block mb-3">0{SERVICES.indexOf(s) + 1}.</span>
-                      <h4 className="font-display font-bold text-base text-brand-blue-900 dark:text-white mb-2">{s.title}</h4>
-                      <p className="font-sans text-xs text-gray-400 dark:text-gray-400 leading-relaxed line-clamp-3">{s.description}</p>
+                {/* Services highlights previews */}
+                <section className="py-24 bg-white dark:bg-brand-blue-900/60 transition-colors">
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                      <h2 className="font-display font-bold text-xs sm:text-sm uppercase tracking-widest text-brand-gold-600 dark:text-brand-gold-400 mb-3">Featured Science</h2>
+                      <h3 className="font-display font-bold text-3xl text-brand-blue-900 dark:text-white leading-tight">Elite Specialized Audits</h3>
+                      <div className="w-16 h-1 bg-brand-gold-500 mx-auto mt-4 rounded-full" />
                     </div>
-                  ))}
-                </div>
 
-                <div className="text-center mt-12">
-                  <button 
-                    onClick={() => { setCurrentTab('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                    className="px-6 py-3 rounded-xl bg-brand-gold-500 hover:bg-brand-gold-600 text-brand-blue-900 font-sans font-bold text-xs uppercase tracking-wider transition"
-                  >
-                    View All 20 Services
-                  </button>
-                </div>
-              </div>
-            </section>
-
-            {/* Testimonials Segment */}
-            <section className="py-24 bg-gray-50 dark:bg-brand-blue-950/20">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                  <h2 className="font-display font-bold text-xs sm:text-sm uppercase tracking-widest text-brand-gold-600 dark:text-brand-gold-400 mb-3">Client Feedback</h2>
-                  <h3 className="font-display font-bold text-3xl text-brand-blue-900 dark:text-white leading-tight">Endorsed by Top Corporate Directors</h3>
-                  <div className="w-16 h-1 bg-brand-gold-500 mx-auto mt-4 rounded-full" />
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                  {TESTIMONIALS.map((t) => (
-                    <div 
-                      key={t.id}
-                      className="p-8 rounded-3xl bg-white dark:bg-brand-blue-900 border border-gray-100 dark:border-brand-blue-800 shadow-sm flex flex-col justify-between"
-                    >
-                      <div>
-                        {/* Rating stars */}
-                        <div className="flex items-center space-x-1 text-brand-gold-500 mb-4">
-                          {[...Array(t.rating)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                      {SERVICES.slice(0, 4).map((s) => (
+                        <div 
+                          key={s.id} 
+                          onClick={() => { setSelectedService(s); setCurrentTab('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                          className="p-6 rounded-2xl bg-gray-50 dark:bg-brand-blue-800/20 border border-gray-100 dark:border-brand-blue-800/40 hover:border-brand-gold-500 transition-all duration-300 cursor-pointer"
+                        >
+                          <span className="font-mono text-brand-gold-500 font-bold text-sm block mb-3">0{SERVICES.indexOf(s) + 1}.</span>
+                          <h4 className="font-display font-bold text-base text-brand-blue-900 dark:text-white mb-2">{s.title}</h4>
+                          <p className="font-sans text-xs text-gray-400 dark:text-gray-400 leading-relaxed line-clamp-3">{s.description}</p>
                         </div>
-                        
-                        <Quote className="text-brand-gold-500/10 mb-2 h-10 w-10 flex-shrink-0" />
-                        
-                        <p className="font-sans text-xs sm:text-sm text-gray-500 dark:text-gray-300 leading-relaxed italic mb-6">
-                          "{t.text}"
-                        </p>
-                      </div>
-
-                      <div className="flex items-center space-x-3.5 pt-4 border-t border-gray-50 dark:border-brand-blue-800/60">
-                        <img 
-                          src={t.image} 
-                          alt={t.name} 
-                          className="w-10 h-10 rounded-full object-cover" 
-                          referrerPolicy="no-referrer"
-                        />
-                        <div>
-                          <p className="font-display font-bold text-xs sm:text-sm text-brand-blue-900 dark:text-white leading-tight">{t.name}</p>
-                          <p className="font-sans text-[10px] text-gray-400 leading-none mt-0.5">{t.role} • <span className="font-semibold">{t.company}</span></p>
-                        </div>
-                      </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+
+                    <div className="text-center mt-12">
+                      <button 
+                        onClick={() => { setCurrentTab('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                        className="px-6 py-3 rounded-xl bg-brand-gold-500 hover:bg-brand-gold-600 text-brand-blue-900 font-sans font-bold text-xs uppercase tracking-wider transition"
+                      >
+                        View All 20 Services
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Testimonials Segment */}
+                <section className="py-24 bg-gray-50 dark:bg-brand-blue-950/20">
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                      <h2 className="font-display font-bold text-xs sm:text-sm uppercase tracking-widest text-brand-gold-600 dark:text-brand-gold-400 mb-3">Client Feedback</h2>
+                      <h3 className="font-display font-bold text-3xl text-brand-blue-900 dark:text-white leading-tight">Endorsed by Top Corporate Directors</h3>
+                      <div className="w-16 h-1 bg-brand-gold-500 mx-auto mt-4 rounded-full" />
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                      {TESTIMONIALS.map((t) => (
+                        <div 
+                          key={t.id}
+                          className="p-8 rounded-3xl bg-white dark:bg-brand-blue-900 border border-gray-100 dark:border-brand-blue-800 shadow-sm flex flex-col justify-between"
+                        >
+                          <div>
+                            {/* Rating stars */}
+                            <div className="flex items-center space-x-1 text-brand-gold-500 mb-4">
+                              {[...Array(t.rating)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+                            </div>
+                            
+                            <Quote className="text-brand-gold-500/10 mb-2 h-10 w-10 flex-shrink-0" />
+                            
+                            <p className="font-sans text-xs sm:text-sm text-gray-500 dark:text-gray-300 leading-relaxed italic mb-6">
+                              "{t.text}"
+                            </p>
+                          </div>
+
+                          <div className="flex items-center space-x-3.5 pt-4 border-t border-gray-50 dark:border-brand-blue-800/60">
+                            <img 
+                              src={t.image} 
+                              alt={t.name} 
+                              className="w-10 h-10 rounded-full object-cover" 
+                              referrerPolicy="no-referrer"
+                            />
+                            <div>
+                              <p className="font-display font-bold text-xs sm:text-sm text-brand-blue-900 dark:text-white leading-tight">{t.name}</p>
+                              <p className="font-sans text-[10px] text-gray-400 leading-none mt-0.5">{t.role} • <span className="font-semibold">{t.company}</span></p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
+                {/* Accordion FAQs */}
+                <FAQ />
               </div>
-            </section>
+            )}
 
-            {/* Accordion FAQs */}
-            <FAQ />
-          </div>
-        )}
+            {currentTab === 'services' && (
+              <Services
+                onSelectService={(s) => setSelectedService(s)}
+                selectedService={selectedService}
+                onCloseService={() => setSelectedService(null)}
+                onInquireService={handleInquireService}
+              />
+            )}
 
-        {currentTab === 'services' && (
-          <Services
-            onSelectService={(s) => setSelectedService(s)}
-            selectedService={selectedService}
-            onCloseService={() => setSelectedService(null)}
-            onInquireService={handleInquireService}
-          />
-        )}
+            {currentTab === 'store' && (
+              <Store
+                onAddToCart={handleAddToCart}
+                onBuyNow={handleBuyNow}
+                selectedProduct={selectedProduct}
+                onSelectProduct={(p) => setSelectedProduct(p)}
+                onCloseProduct={() => setSelectedProduct(null)}
+              />
+            )}
 
-        {currentTab === 'store' && (
-          <Store
-            onAddToCart={handleAddToCart}
-            onBuyNow={handleBuyNow}
-            selectedProduct={selectedProduct}
-            onSelectProduct={(p) => setSelectedProduct(p)}
-            onCloseProduct={() => setSelectedProduct(null)}
-          />
-        )}
+            {currentTab === 'membership' && (
+              <Membership onRegisterSuccess={() => {}} />
+            )}
 
-        {currentTab === 'membership' && (
-          <Membership onRegisterSuccess={() => {}} />
-        )}
+            {currentTab === 'team' && (
+              <Team />
+            )}
 
-        {currentTab === 'team' && (
-          <Team />
-        )}
+            {currentTab === 'gallery' && (
+              <Gallery />
+            )}
 
-        {currentTab === 'gallery' && (
-          <Gallery />
-        )}
+            {currentTab === 'blog' && (
+              <Blog
+                onOpenBlog={(b) => setSelectedBlog(b)}
+                selectedBlog={selectedBlog}
+                onCloseBlog={() => setSelectedBlog(null)}
+              />
+            )}
 
-        {currentTab === 'blog' && (
-          <Blog
-            onOpenBlog={(b) => setSelectedBlog(b)}
-            selectedBlog={selectedBlog}
-            onCloseBlog={() => setSelectedBlog(null)}
-          />
-        )}
-
-        {currentTab === 'contact' && (
-          <Contact
-            initialServiceName={inquiryServiceName}
-            onBookingSuccess={() => setInquiryServiceName('')}
-          />
-        )}
+            {currentTab === 'contact' && (
+              <Contact
+                initialServiceName={inquiryServiceName}
+                onBookingSuccess={() => setInquiryServiceName('')}
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {/* Persistent Footer with navigation handlers */}

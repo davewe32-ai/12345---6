@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, GraduationCap, ArrowUpRight } from 'lucide-react';
+import { Award, GraduationCap, ArrowUpRight, User } from 'lucide-react';
 import { TEAM } from '../data';
 
 export default function Team() {
@@ -29,13 +29,11 @@ export default function Team() {
               className="rounded-3xl bg-white dark:bg-brand-blue-900 border border-gray-100 dark:border-brand-blue-800 shadow-xl overflow-hidden grid md:grid-cols-12 gap-0 group hover:border-brand-gold-500/30 transition-all duration-300"
             >
               {/* Chairman Photo */}
-              <div className="md:col-span-5 h-[380px] md:h-full min-h-[380px] relative overflow-hidden bg-brand-blue-950 flex items-center justify-center p-6">
-                <img
-                  src={chairman.image}
-                  alt={chairman.name}
-                  className="w-full h-full object-contain rounded-2xl group-hover:scale-102 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="md:col-span-5 h-[380px] md:h-full min-h-[380px] relative overflow-hidden bg-brand-blue-950 flex flex-col items-center justify-center p-6 text-brand-gold-400">
+                <div className="w-32 h-32 rounded-full bg-brand-blue-900/50 border-2 border-brand-gold-500/30 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-500">
+                  <User size={64} className="stroke-[1.5]" />
+                </div>
+                <span className="font-sans text-xs text-gray-400 uppercase tracking-widest mt-4">IPVPA Chairman</span>
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-950/40 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Chairman stamp */}

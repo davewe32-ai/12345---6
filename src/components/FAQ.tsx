@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Sparkles, HelpCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { FAQS } from '../data';
 
 export default function FAQ() {
@@ -50,34 +51,45 @@ export default function FAQ() {
 
         {/* Accordion container */}
         <div className="space-y-4">
-          {filteredFaqs.map((faq) => {
-            const isOpen = openId === faq.id;
-            return (
-              <div
-                key={faq.id}
-                className="rounded-2xl border border-gray-150 dark:border-brand-blue-800 bg-white dark:bg-brand-blue-900/60 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                {/* Header click bar */}
-                <button
-                  onClick={() => toggleFaq(faq.id)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-brand-blue-900 dark:text-white hover:text-brand-gold-600 dark:hover:text-brand-gold-400 transition-colors"
+          <AnimatePresence initial={false}>
+            {filteredFaqs.map((faq) => {
+              const isOpen = openId === faq.id;
+              return (
+                <motion.div
+                  key={faq.id}
+                  layout
+                  className="rounded-2xl border border-gray-150 dark:border-brand-blue-800 bg-white dark:bg-brand-blue-900/60 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <span className="flex items-center gap-2.5">
-                    <HelpCircle size={18} className="text-brand-gold-500 flex-shrink-0" />
-                    {faq.question}
-                  </span>
-                  {isOpen ? <ChevronUp size={18} className="text-brand-gold-500 flex-shrink-0" /> : <ChevronDown size={18} className="text-gray-400 flex-shrink-0" />}
-                </button>
+                  {/* Header click bar */}
+                  <button
+                    onClick={() => toggleFaq(faq.id)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-sm sm:text-base text-brand-blue-900 dark:text-white hover:text-brand-gold-600 dark:hover:text-brand-gold-400 transition-colors"
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <HelpCircle size={18} className="text-brand-gold-500 flex-shrink-0" />
+                      {faq.question}
+                    </span>
+                    {isOpen ? <ChevronUp size={18} className="text-brand-gold-500 flex-shrink-0" /> : <ChevronDown size={18} className="text-gray-400 flex-shrink-0" />}
+                  </button>
 
-                {/* Body expanded text */}
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-gray-500 dark:text-gray-300 font-sans leading-relaxed border-t border-gray-50 dark:border-brand-blue-800/50 animate-fade-in">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                  {/* Body expanded text */}
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-gray-500 dark:text-gray-300 font-sans leading-relaxed border-t border-gray-50 dark:border-brand-blue-800/50">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </div>
 
       </div>

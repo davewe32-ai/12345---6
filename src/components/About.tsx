@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Eye, ShieldCheck, Cpu, HeartPulse, Activity, Zap, Compass, Flame } from 'lucide-react';
+import { Eye, ShieldCheck, Cpu, HeartPulse, Activity, Zap, Compass, Flame, User } from 'lucide-react';
 import Logo from './Logo';
 
 export default function About() {
@@ -32,17 +32,14 @@ export default function About() {
         {/* Vision & Leadership Module */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-brand-gold-500/20 shadow-2xl z-10 bg-brand-blue-950/80 aspect-square flex items-center justify-center">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D5603AQEP5Q6QnXg83w/profile-displayphoto-scale_400_400/B56Zsi8OrAJwAg-/0/1765817774342?e=2147483647&v=beta&t=uXMiLEeX04ocjmB0QFnI95rXvUFdrvi0mpbwqg0M_7k"
-                alt="Meril Peiris, Chairman of IPVPA"
-                className="w-full h-full object-contain"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-950/80 via-transparent to-transparent pointer-events-none" />
+            <div className="relative rounded-3xl overflow-hidden border border-brand-gold-500/20 shadow-2xl z-10 bg-brand-blue-950/80 aspect-square flex flex-col items-center justify-center text-brand-gold-400 p-8">
+              <div className="w-36 h-36 rounded-full bg-brand-blue-900/60 border border-brand-gold-500/30 flex items-center justify-center shadow-2xl mb-4">
+                <User size={80} className="stroke-[1.5]" />
+              </div>
+              <span className="font-sans text-xs text-gray-400 uppercase tracking-widest">IPVPA Leadership</span>
               
               {/* Image Floating Captions */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass border border-white/10">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass border border-white/10 text-center">
                 <p className="font-display font-extrabold text-base text-white mb-0.5">Meril Peiris</p>
                 <p className="font-sans text-[10px] text-brand-gold-400 uppercase tracking-widest font-semibold">
                   Chairman & Architectural Designer
